@@ -1,0 +1,29 @@
+<html>
+	<script>
+	function clicked(){
+		alert("Ha! You have been clickjacked!")
+	}
+	</script>
+   <head>
+     <title>Clickjack test page</title>
+   </head>
+   <body>
+	<style>
+	iframe { /* iframe from facebook.com */
+	  width:100%;
+	  height:100%;
+	  position:absolute;
+	  top:0; left:0;
+	  filter:alpha(opacity=0); /* in real life opacity=0 */
+	  opacity:0.5;
+	}
+	#bu { 
+	  position:absolute;
+	  top:400; left:470;
+	}
+	</style>
+
+    <input type="button" id="bu" onclick="clicked()" value="You Can't See Me!">
+
+   </body>
+</html>
